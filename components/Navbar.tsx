@@ -1,7 +1,6 @@
 import {NavbarWrapper, LogoWrapper, NavTitle} from "./Navbar.styles";
 import Image from "next/image";
 import Logo from "../public/images/logo.svg";
-import {JSX} from "@babel/types";
 import Link from "next/link";
 import {useRouter} from "next/router";
 import {Wrapper} from "../styles/Global.styles";

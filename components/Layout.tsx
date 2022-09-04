@@ -7,7 +7,7 @@ export default function Layout({children}: any) {
     return (
         <Wrapper position="relative" top="0" right="0" width="100vw" height="100vh">
             <div style={{zIndex: "-1"}}>
-                <Image src={Bg} layout="fill"/>
+                <Image src={Bg} layout="fill" alt="bg"/>
             </div>
             <Navbar/>
             <main>{children}</main>

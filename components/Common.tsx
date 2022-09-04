@@ -4,7 +4,6 @@ import {AnimatePresence, motion} from "framer-motion";
 interface CommonProps {
     height?: string;
     width?: string;
-
 }
 
 export const SizedBox = styled.div<CommonProps>`
