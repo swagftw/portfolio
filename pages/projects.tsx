@@ -1,0 +1,20 @@
+import {NextPage} from "next";
+import {PageTransition} from "../components/Common";
+import {Wrapper} from "../styles/Global.styles";
+import {Heading} from "../styles/Theme";
+
+const Projects: NextPage = () => {
+    return <PageTransition>
+        <Page/>
+    </PageTransition>
+}
+
+function Page() {
+    return <Wrapper alignItems="center">
+        <Wrapper maxWidth="50rem" minWidth="35rem" margin="12rem 4rem 0 4rem" height="100%" width="100%">
+            <Heading>Projects</Heading>
+        </Wrapper>
+    </Wrapper>
+}
+
+export default Projects
