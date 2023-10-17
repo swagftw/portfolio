@@ -46,6 +46,10 @@ export default {
             blue10: "#EDF5FF",
             primary: "#0F62FE"
         },
+        fontFamily: {
+            sans: ['IBM Plex Sans', 'sans-serif'],
+            mono: ['IBM Plex Mono', 'monospace']
+        },
         extend: {
             gridTemplateRows: {
                 '8': 'repeat(8, minmax(0, 1fr))',

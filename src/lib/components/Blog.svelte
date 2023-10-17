@@ -3,7 +3,7 @@
     export let blog;
 </script>
 
-<div class="flex flex-col border border-gray90 hover:bg-gray100
+<a href="/blog/{blog.slug}" class="flex flex-col border border-gray90 hover:bg-gray100
             sm:flex-row sm:col-span-full
             lg:flex-col lg:col-span-3
             xl:col-span-2">
@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="w-full h-48 sm:w-1/2 gradient lg:w-full"/>
-</div>
+</a>
 
 <style>
     .gradient {
