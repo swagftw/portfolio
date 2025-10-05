@@ -1,0 +1,7 @@
+{
+  "componentsDir": "site/components",
+  "utilsDir": "pkg/utils",
+  "moduleName": "github.com/swagftw/portfolio",
+  "jsDir": "assets/js",
+  "jsPublicPath": "/assets/js"
+}

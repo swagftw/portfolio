@@ -1,0 +1,283 @@
+package pages
+
+import "github.com/swagftw/portfolio/site/components/icon"
+
+templ Page() {
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>Swapnil Nakade</title>
+			<link rel="preconnect" href="https://fonts.googleapis.com"/>
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+			<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet"/>
+			<link rel="stylesheet" href="../../assets/css/styles.css"/>
+		</head>
+		<body class="min-w-100vw min-h-100vh bg-neutral-900 flex flex-col px-3 justify-center items-center font-mono text-neutral-200">
+			<div class="flex flex-col border-x-1 border-neutral-700 w-full max-w-3xl h-full">
+				// add separator
+				<div class="p-3 flex flex-col gap-6 border-y border-neutral-700 mt-4">
+					<div class="flex flex-row justify-between items-start">
+						<div class="flex flex-col">
+							<span class="font-medium">Swapnil Nakade</span>
+							<span class="text-neutral-400 font-medium text-sm">Backend Engineer</span>
+							<span class="text-neutral-400 text-xs pt-1">Bengaluru, India</span>
+						</div>
+						<div class="flex flex-row gap-1 border-b border-neutral-400 pb-1 text-neutral-200">
+							@icon.Download(icon.Props{Class: "w-4 h-4"})
+							<a href="https://drive.google.com/file/d/1E9116rxZSJlsWG15a3xiSc0XPR1pgYFs/view?usp=sharing" target="_blank" class="text-xs">Download Resume</a>
+						</div>
+					</div>
+					<div class="flex flex-row gap-2 items-center">
+						@icon.Circle(icon.Props{Class: "w-2 h-2 text-green-500 bg-green-500 rounded-full"})
+						<span class="text-xs text-green-500">Open To work</span>
+					</div>
+				</div>
+				<div class="flex flex-row justify-between items-center p-3 mb-8">
+					<div class="flex flex-row items-center gap-1">
+						// copy icon to clipboard
+						<button class="focus:outline-none" onclick="copyToClipboard('swapnilnakade.sn@gmail.com')">
+							@icon.Copy(icon.Props{Class: "w-3 h-3"})
+						</button>
+						<a href="mailto:swapnilnakade.sn@gmail.com" class="text-xs">swapnilnakade.sn@gmail.com</a>
+					</div>
+					<a href="https://www.linkedin.com/in/swapnil-nakade-99064a318/" class="text-xs" target="_blank">LinkedIn</a>
+				</div>
+				// ME SECTION
+				<div class="flex flex-col gap-6 px-3 py-4 border-b border-neutral-700">
+					<span class="font-medium">ME</span>
+					<div class="font-normal text-sm text-neutral-400">
+						<span class="font-medium text-neutral-200">Your regular software engineer.</span>
+						<span>
+							I have 4+ years of experience in startups at different levels, and I have learnt a lot during this period not just about the technology but I would say more about the People. 
+							I have been a team person always, I think I bring great energy in team and love to solve the problems which have visible impact.
+						</span>
+					</div>
+				</div>
+				// EXPERIENCE SECTION
+				<div class="flex flex-col gap-6 px-3 py-6 border-b border-neutral-700">
+					<span class="font-medium">EXPERIENCE</span>
+					@JobComponent(Job{
+						Title:     "Senior Software Engineer",
+						Company:   "Simpl",
+						Location:  "Bengaluru, India",
+						StartDate: "Nov 2024",
+						EndDate:   "Present",
+						Responsibilities: []string{
+							"Core member in development of Bill Payment System (Bharat Bill Pay), great technical challenge to manage multiple payment categories and modeling system for efficient future expansion. Built Autopay systems, reconciliation workers and maintaining valid state of the system.",
+							"Co-Authored Simpl's Select membership and benefit activation system, generating revenue of 2 Crore/Month.",
+							"Responsible for managing Content Management Systems via Strapi, maintaining content models and integration with other systems, wrote a proxy layer for HTTP caching.",
+							"Developed Reward distribution and management framework to provide rewards across multiple channels.",
+							"Migrated services to latest version of Go and introduced best practices in the team.",
+							"Authored Go library for producing OpenTelemetry metrics, helping services to be more observable with few lines of code.",
+						},
+					})
+					<div class="border border-neutral-700 border-dashed border-spacing-y-2"></div>
+					@JobComponent(Job{
+						Title:     "Software Engineer II",
+						Company:   "Station",
+						Location:  "Bengaluru, India",
+						StartDate: "Nov 2023",
+						EndDate:   "Nov 2024",
+						Responsibilities: []string{
+							"Developed the complete backend stack from scratch in Golang for a complex Mail client for business teams with collaboration in mind",
+							"Developed 7 microservices exposed via HTTP and GraphQL transport gateway. Used gRPC for inter-service communication.",
+							"Developed a complex email sync service which uses pub/sub model to sync emails from Gmail server. Also developed RabbitMQ based workers for asynchronous processing of synced emails for collaboration and sharing",
+							"Developed communication system like slack from scratch using pub/sub, webhooks for proxy and websockets",
+							"I have working understanding of HTTP/1.1 RFC and have also read through IMAP RFC for this project",
+						},
+					})
+					<div class="border border-neutral-700 border-dashed border-spacing-y-2"></div>
+					@JobComponent(Job{
+						Title:     "Distributed Systems Engineer (Freelance) ",
+						Company:   "Trackstreet, PowerLoom Protocol",
+						Location:  "Remote",
+						StartDate: "Oct 2022",
+						EndDate:   "June 2023",
+						Responsibilities: []string{
+							"Responsible for migrating polling architecture based Web3 services to Event based architecture, written in Golang and RabbitMQ",
+							"Developed fault tolerant, high performance systems, used rate limiting, Redis caches and heavy use of concurrency principles throughout the system, also there was thread synchronisation via mutex locks",
+							"Developed high scale web crawlers in Golang for e-commerce websites",
+							"Did Reverse engineering and lot of intelligence gathering work via Burp-suit and similar technologies",
+						},
+					})
+					<div class="border border-neutral-700 border-dashed border-spacing-y-2"></div>
+					@JobComponent(Job{
+						Title:     "Software Engineer",
+						Company:   "Obmondo",
+						Location:  "Mumbai, India",
+						StartDate: "July 2022",
+						EndDate:   "Oct 2022",
+						Responsibilities: []string{
+							"Was responsible for migrating Clojure APIs to Golang APIs",
+							"Writing new helm charts for Kubernetes and help team managing client K8s clusters",
+							"Learnt about open source contribution and best practices around it for efficient remote collaboration",
+							"Commit trail not available as codebase was hosted on self-hosted Gitlab instance",
+						},
+					})
+				</div>
+				// PROJECTS SECTION
+				<div class="flex flex-col gap-6 px-3 py-6 border-b border-neutral-700 ">
+					<span class="font-medium">PROJECTS</span>
+					<div class="flex flex-col gap-4">
+						@ProjectComponent(Project{
+							Name:        "Load Balancer",
+							Stack:       "Golang, HTTP/TCP Protocols",
+							Description: "Round robin based load-balancer with easy configuration and live loading",
+							GithubLink:  "https://github.com/swagftw/lb",
+						})
+						@ProjectComponent(Project{
+							Name:        "Forward Proxy Local Tunnel",
+							Stack:       "Golang, TCP",
+							Description: "Developed a local port exposing forward proxy in Golang. Implementing, TCP protocol for communication and coming up with parser, Current state of the project can forward remote http requests to local service",
+							GithubLink:  "https://github.com/swagftw/rex",
+						})
+						@ProjectComponent(Project{
+							Name:        "Go Telemetry (Gotel)",
+							Stack:       "Golang, OpenTelemetry",
+							Description: "Developed a Go library for collecting and exporting telemetry data using OpenTelemetry.",
+							GithubLink:  "https://github.com/swagftw/gotel",
+						})
+					</div>
+				</div>
+				// TALKS SECTION
+				<div class="flex flex-col px-3 py-6 gap-6 border-b border-neutral-700 ">
+					<span class="font-medium">TALKS & PRESENTATIONS</span>
+					@TalkComponent(Talk{
+						Title:    "Performance guided optimization in Golang",
+						Location: "Go Bengaluru Meetup",
+						Date:     "April 2024",
+						Description: []string{
+							"Gave a talk on how to optimize Go code using standard tools provided by Golang like Pprof",
+							"Showed how to use benchmarking tool in Golang std lib with tests",
+						},
+					})
+					<div class="border border-neutral-700 border-dashed border-spacing-y-2"></div>
+					@TalkComponent(Talk{
+						Title:    "Introduction to internals of HTTP protocol",
+						Location: "Go Bengaluru Meetup",
+						Date:     "October 2024",
+						Description: []string{
+							"A hands-on to look into the internals of the HTTP protocol and implemented a simple HTTP lib in Go.",
+							"Understand the structure while passing data around over TCP and learn from it to implement HTTP protocol from scratch.",
+						},
+					})
+				</div>
+				// TECHNICAL SKILLS SECTION
+				<div class="flex flex-col px-3 py-6 gap-6 border-b border-neutral-700 ">
+					<span class="font-medium">TECHNICAL SKILLS</span>
+					<div class="flex flex-col gap-4">
+						<div class="flex flex-col gap-2">
+							<span class="font-medium text-sm">Languages</span>
+							<span class="text-sm text-neutral-400">Golang, JS/TS, Elixir, Ruby, Zig(learning)</span>
+						</div>
+						<div class="flex flex-col gap-2">
+							<span class="font-medium text-sm">Technologies & Tools</span>
+							<span class="text-sm text-neutral-400">
+								Gin, Echo, Fiber, Colly, React, Svelte, ROR, RabbitMQ, Redis, NATS.io, Pub/Sub, EDD, DDD, HTTP and TCP protocol, IMAP Protocol, OAuth,
+								RBAC, FGAC,GraphQL, OpenTelemetry
+							</span>
+						</div>
+						<div class="flex flex-col gap-2">
+							<span class="font-medium text-sm">Cloud Platforms</span>
+							<span class="text-sm text-neutral-400">AWS, DigitalOcean, GCP</span>
+						</div>
+					</div>
+				</div>
+				// EDUCATION SECTION
+				<div class="flex flex-col px-3 py-6 gap-6 border-b border-neutral-700 ">
+					<span class="font-medium">EDUCATION</span>
+					<div class="flex flex-col gap-1">
+						<p class="text-xs text-neutral-400">Government College of Engineering, Aurangabad</p>
+						<div class="flex flex-row justify-between items-end w-full whitespace-nowrap">
+							<p class="font-medium text-sm whitespace-break-spaces">Bachelor of Technology - Computer Science</p>
+							<p class="text-xs text-neutral-400">2018 - 2022</p>
+						</div>
+					</div>
+				</div>
+				// NOTE section
+				<div class="flex flex-col px-3 py-6 gap-6 border-b border-neutral-700 ">
+					<div class="text-sm bg-neutral-200 rounded-md p-2 text-neutral-800">
+						<p>
+							THIS WEBSITE IS BEING SERVED VIA MY PERSONAL LAPTOP ON HOME WI-FI THROUGH A FORWARD PROXY CONNECTING TO CLOUDFLARE TUNNEL, 
+							WHICH KEEPS MY CHANGING PUBLIC IP IN SYNC, AND WEBSITE RUNNING WITHOUT ANY CLOUD SERVICE
+						</p>
+						<p class="mt-2">
+							IF WEBSITE GOES DOWN, MOST LIKELY MY INTERNET IS DOWN :)
+						</p>
+					</div>
+				</div>
+			</div>
+		</body>
+	</html>
+}
+
+type Job struct {
+	Title            string
+	Company          string
+	Location         string
+	StartDate        string
+	EndDate          string
+	Responsibilities []string
+}
+
+templ JobComponent(job Job) {
+	<div class="flex flex-col gap-1">
+		<p class="text-xs text-neutral-400">{ job.Company } - { job.Location }</p>
+		// do not break words in new line only if required
+		<div class="flex flex-row justify-between items-end w-full whitespace-nowrap">
+			<p class="font-medium text-sm whitespace-break-spaces">{ job.Title }</p>
+			<p class="text-xs text-neutral-400">{ job.StartDate } - { job.EndDate }</p>
+		</div>
+		<ul class="list-disc list-inside text-sm text-neutral-400 mt-4 flex flex-col gap-3">
+			for _, resp := range job.Responsibilities {
+				<li>{ resp }</li>
+			}
+		</ul>
+	</div>
+}
+
+type Project struct {
+	Name        string
+	Stack       string
+	Description string
+	GithubLink  string
+}
+
+templ ProjectComponent(project Project) {
+	<div class="flex flex-col border border-neutral-700 max-h-min">
+		<div class="flex flex-col gap-1 p-3">
+			<p class="font-medium text-sm text-neutral-200">{ project.Name }</p>
+			<p class="text-xs text-neutral-400">{ project.Stack }</p>
+			<p class="text-sm text-neutral-400 mt-4">{ project.Description }</p>
+		</div>
+		// link should take full width as above div and center text a button
+		<a href={ project.GithubLink } target="_blank" class="p-3 flex flex-row justify-center items-center bg-neutral-700 hover:bg-blue-500 transition-colors duration-300">
+			<span class="text-xs">VIEW ON GITHUB</span>
+		</a>
+	</div>
+}
+
+type Talk struct {
+	Title       string
+	Location    string
+	Date        string
+	Description []string
+}
+
+templ TalkComponent(talk Talk) {
+	<div class="flex flex-col gap-1">
+		<p class="text-xs text-neutral-400">{ talk.Location }</p>
+		// do not break words in new line only if required
+		<div class="flex flex-row justify-between items-end w-full whitespace-nowrap">
+			<p class="font-medium text-sm whitespace-break-spaces">{ talk.Title }</p>
+			<p class="text-xs text-neutral-400">{ talk.Date }</p>
+		</div>
+		<ul class="list-disc list-inside text-sm text-neutral-400 mt-4 flex flex-col gap-3">
+			for _, desc := range talk.Description {
+				<li>{ desc }</li>
+			}
+		</ul>
+	</div>
+}
